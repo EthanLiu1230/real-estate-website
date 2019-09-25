@@ -10,8 +10,9 @@ def index(request):
     # '-' for descendent
     # listings = Listing.object.all()
     listings = Listing.objects.order_by('-list_date').filter(is_published=True)
-    # Pagination
+    # Pagination (items, item_per_page)
     paginator = Paginator(listings, 1)
+    # Get page number through url: '?page=xxx'
     page = request.GET.get('page')
     paged_listings = paginator.get_page(page)
 
