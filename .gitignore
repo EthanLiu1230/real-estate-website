@@ -197,3 +197,4 @@ fabric.properties
 # static files
 /static
 /media
+/.idea
